@@ -1,0 +1,9 @@
+colorful==0.5.4
+docopt==0.6.2
+prompt-toolkit==1.0.14
+Pygments==2.6.1
+PyInquirer==1.0.3
+regex==2020.7.14
+six==1.15.0
+tabulate==0.8.7
+wcwidth==0.2.5
