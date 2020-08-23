@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="compilertk",
-    version="0.12.0",
+    version="0.12.1",
     description=(
         "Collections of tools useful for syntax analysis part of compiler design"
     ),

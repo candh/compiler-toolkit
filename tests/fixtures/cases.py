@@ -531,6 +531,9 @@ is_nullable_test_cases_targets = [
 
 first_follow_set_test_cases = [
     """
+    S -> S c S | d
+    """,
+    """
     S -> a
     """,
     """
@@ -664,6 +667,7 @@ first_follow_set_test_cases = [
 ]
 
 first_set_test_cases_targets = [
+    {"S": set(["d"])},
     {"S": set(["a"])},
     {"S": set(["a"]), "A": set(["a"])},
     {"S": set(["a", "eps"]), "A": set(["a"])},
@@ -762,6 +766,7 @@ first_set_test_cases_targets = [
 ]
 
 follow_set_test_cases_targets = [
+    {"S": set(["$", "c"])},
     {"S": set(["$"])},
     {"S": set(["$"]), "A": set(["$"])},
     {"S": set(["$"]), "A": set(["$"])},

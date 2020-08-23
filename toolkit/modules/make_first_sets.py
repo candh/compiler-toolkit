@@ -32,14 +32,18 @@ def first_set(non_ter, pgrammar, nullables, parents=[]):
                 ret.add(sym)
                 r_null_list.append(False)  # terminal is not a nullable
                 break  # break on a terminal
-            elif sym == non_ter:
-                # do not set loop
-                continue
             else:
                 isn = sym in nullables
                 r_null_list.append(isn)
 
-                # do not explore a parent
+                if sym == non_ter:
+                    if not isn:
+                        break
+                    else:
+                        # prevent self loop but still
+                        # explore next symbol
+                        continue
+
                 if sym not in parents:
                     parents.append(non_ter)
                     ret |= first_set(sym, pgrammar, nullables)
