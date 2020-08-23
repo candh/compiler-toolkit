@@ -186,6 +186,21 @@ def main():
             output = remove_same_rules(output, False, False)
 
         elif choice == choices[2]:
+            continuel = False
+            for rule in pgrammar.values():
+                if "eps" in rule:
+                    print(
+                        cf.red(
+                            "\nGrammar contains null productions. This operation can't"
+                            " be performed\n"
+                        )
+                    )
+                    continuel = True
+                    break
+
+            if continuel:
+                continue
+
             answer = prompt(reverse_confirm)
             reverse = answer["reverse_grammar"]
             if reverse:
